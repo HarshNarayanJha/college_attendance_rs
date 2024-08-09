@@ -1,0 +1,8 @@
+[package]
+name = "college_attendance"
+authors = ["Harsh Narayan Jha"]
+description = "Simple CLI to automatically mark and increment my daily attendance at college, preventing me from doing that each day"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
