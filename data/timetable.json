@@ -1,0 +1,34 @@
+{
+  "MON": [
+    "OOP",
+    "DSD",
+    "DM",
+    "DS",
+    "DSLAB"
+  ],
+  "TUE": [
+    "DM",
+    "DSD",
+    "DS",
+    "COA",
+    "NSSPT"
+  ],
+  "WED": [
+    "DSD",
+    "OOP",
+    "COA",
+    "DS",
+    "BEELAB"
+  ],
+  "THU": [
+    "DM",
+    "DSLAB",
+    "DSDLAB"
+  ],
+  "FRI": [
+    "OOP",
+    "DS",
+    "COA",
+    "DM"
+  ]
+}
