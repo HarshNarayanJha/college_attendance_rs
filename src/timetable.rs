@@ -27,7 +27,7 @@ pub struct TimeTable {
 }
 
 impl TimeTable {
-    pub fn new(json_data: &str) -> Result<TimeTable> {
+    pub fn new(json_data: &str) -> Result<Self> {
         match serde_json::from_str(json_data) {
             Ok(data) => Ok(data),
             Err(e) => Err(e)

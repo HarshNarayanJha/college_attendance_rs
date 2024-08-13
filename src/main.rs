@@ -1,7 +1,9 @@
 use std::{fs, path::Path};
 
+pub mod attendance;
 pub mod timetable;
 
+use attendance::Attendance;
 use timetable::TimeTable;
 
 fn main() {
@@ -23,4 +25,14 @@ fn main() {
     };
 
     println!("{:#?}", time_table);
+
+    let attendance = match Attendance::new() {
+        Ok(data) => data,
+        Err(e) => {
+            eprintln!("Error loading attendance data -> {}", e);
+            return;
+        }
+    };
+
+    println!("{:#?}", attendance);
 }
