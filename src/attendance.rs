@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::fmt::Display;
 
 use csv;
 use csv::Result;
@@ -15,7 +15,18 @@ pub struct AttendanceEntry {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Attendance {
-    pub subjects: HashMap<Subject, AttendanceEntry>,
+    pub subjects: Vec<(Subject, AttendanceEntry)>,
+}
+
+impl Display for Attendance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        writeln!(f, "\nSubject\t\tClasses").ok();
+        for (sub, entry) in self.subjects.iter() {
+            writeln!(f, "{:?}\t\t{}", sub, entry.classes).ok();
+        }
+
+        write!(f, "")
+    }
 }
 
 impl Attendance {
@@ -24,11 +35,11 @@ impl Attendance {
 
         let _headers = reader.headers()?;
 
-        let mut subjects = HashMap::new();
+        let mut subjects = Vec::new();
 
         for result in reader.deserialize() {
             let entry: AttendanceEntry = result?;
-            subjects.insert(entry.subject, entry);
+            subjects.push((entry.subject, entry));
         }
 
         Ok(Self { subjects })

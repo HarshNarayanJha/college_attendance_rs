@@ -1,53 +1,35 @@
-use std::{fs, path::Path, time::SystemTime};
+use std::{fs, path::Path};
 
 pub mod attendance;
 pub mod timetable;
 
 use attendance::Attendance;
-use chrono::{DateTime, Datelike, Local, Utc};
-use timetable::{Subject, TimeTable};
+use chrono::{DateTime, Datelike, Local};
+use inquire::{Confirm, Select};
+use timetable::TimeTable;
 
 fn main() {
-    let time_table_path = Path::new("./data/timetable.json");
-    let time_table_data = match fs::read_to_string(time_table_path) {
-        Ok(data) => data,
-        Err(_) => {
-            eprintln!("Error opening time table");
-            return;
-        }
+    let time_table = match load_time_table() {
+        Some(value) => value,
+        None => return,
     };
 
-    let time_table = match TimeTable::new(&time_table_data) {
-        Ok(table) => table,
-        Err(e) => {
-            eprintln!("Error parsing time table -> {}", e);
-            return;
-        }
+    let mut attendance = match load_attendance() {
+        Some(value) => value,
+        None => return,
     };
 
-    let mut attendance = match Attendance::new() {
-        Ok(data) => data,
-        Err(e) => {
-            eprintln!("Error loading attendance data -> {}", e);
-            return;
-        }
-    };
-
-    println!("Classes Counter in Rust\n");
+    println!("Classes Counter in Rust");
+    println!("This CLI allows you to keep track of total no. of classes each subject had in your college!\n");
 
     let local: DateTime<Local> = Local::now();
-    // println!(
-    //     "Date/Time created using SystemTime: {}",
-    //     local.format("%d-%b-%Y %H:%M:%S %P %z")
-    // );
-
     let today = local.format("%d %b %Y");
     let day = local.weekday();
 
     let todays_subjects = match time_table.subjects_on(local.weekday()) {
         Some(subs) => subs,
         None => {
-            eprintln!("No classes today!");
+            eprintln!("No classes today, go sleep!");
             return;
         }
     };
@@ -56,14 +38,93 @@ fn main() {
     println!("Today is {}", day);
     println!("Today's subjects are {:?}", todays_subjects);
 
-    for &sub in todays_subjects {
-        attendance
-            .subjects
-            .entry(sub)
-            .and_modify(|classes| classes.classes += 1);
+    println!();
+
+    let options: Vec<String> = vec![
+        format!("1. Mark today's classes ({} {})", local.weekday(), today.to_string()),
+        "2. Mark day's classes (Select Date)".to_string(),
+        "3. Check Classes".to_string(),
+        "4. Save".to_string(),
+        "5. Exit".to_string(),
+    ];
+
+    loop {
+        let option = match Select::new("What do you want to do?", options.clone()).prompt() {
+            Ok(choice) => choice,
+            Err(_) => {
+                eprintln!("Wait how did you...?");
+                return;
+            }
+        };
+
+        match option.as_str() {
+            x if x == options[0] => {
+                for &sub in todays_subjects {
+                    if let Some((_, entry)) = attendance
+                        .subjects
+                        .iter_mut()
+                        .find(|&&mut (subject, _)| subject == sub)
+                    {
+                        entry.classes += 1;
+                    }
+                }
+
+                println!("Marked +1 in {:?}", todays_subjects);
+            }
+
+            x if x == options[1] => {}
+
+            x if x == options[2] => {
+                println!("{}", attendance);
+            }
+
+            x if x == options[3] => {
+                if let Ok(save) = Confirm::new("Sure to Save (y/n)?").prompt() {
+                    if save {
+                        attendance.save().ok();
+                    }
+                }
+            }
+
+            x if x == options[4] => {
+                println!("Thanks for using, exiting...");
+                break;
+            }
+
+            _ => {
+                eprintln!("Wait how did you...?");
+                return;
+            }
+        }
     }
+}
 
-    println!("{:?}", attendance);
+fn load_attendance() -> Option<Attendance> {
+    let attendance = match Attendance::new() {
+        Ok(data) => data,
+        Err(e) => {
+            eprintln!("Error loading attendance data -> {}", e);
+            return None;
+        }
+    };
+    Some(attendance)
+}
 
-    // attendance.save();
+fn load_time_table() -> Option<TimeTable> {
+    let time_table_path = Path::new("./data/timetable.json");
+    let time_table_data = match fs::read_to_string(time_table_path) {
+        Ok(data) => data,
+        Err(_) => {
+            eprintln!("Error opening time table");
+            return None;
+        }
+    };
+    let time_table = match TimeTable::new(&time_table_data) {
+        Ok(table) => table,
+        Err(e) => {
+            eprintln!("Error parsing time table -> {}", e);
+            return None;
+        }
+    };
+    Some(time_table)
 }
