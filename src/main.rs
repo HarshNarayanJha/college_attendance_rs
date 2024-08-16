@@ -5,7 +5,7 @@ pub mod timetable;
 
 use attendance::Attendance;
 use chrono::{DateTime, Datelike, Local};
-use inquire::{Confirm, Select};
+use inquire::{Confirm, DateSelect, MultiSelect, Select};
 use timetable::TimeTable;
 
 fn main() {
@@ -41,7 +41,11 @@ fn main() {
     println!();
 
     let options: Vec<String> = vec![
-        format!("1. Mark today's classes ({} {})", local.weekday(), today.to_string()),
+        format!(
+            "1. Mark today's classes ({} {})",
+            local.weekday(),
+            today.to_string()
+        ),
         "2. Mark day's classes (Select Date)".to_string(),
         "3. Check Classes".to_string(),
         "4. Save".to_string(),
@@ -59,20 +63,42 @@ fn main() {
 
         match option.as_str() {
             x if x == options[0] => {
-                for &sub in todays_subjects {
-                    if let Some((_, entry)) = attendance
-                        .subjects
-                        .iter_mut()
-                        .find(|&&mut (subject, _)| subject == sub)
-                    {
-                        entry.classes += 1;
-                    }
-                }
-
-                println!("Marked +1 in {:?}", todays_subjects);
+                mark_classes(todays_subjects, &mut attendance);
             }
 
-            x if x == options[1] => {}
+            x if x == options[1] => {
+                let selected_date = DateSelect::new("Which date to mark classes of?")
+                    .with_week_start(chrono::Weekday::Mon)
+                    .prompt();
+
+                let subjects = match selected_date {
+                    Ok(d) => match time_table.subjects_on(d.weekday()) {
+                        Some(subs) => subs,
+                        None => {
+                            eprintln!("No classes, go sleep!");
+                            return;
+                        }
+                    },
+                    Err(_) => {
+                        eprintln!("No date selected?!");
+                        return;
+                    }
+                };
+
+                let edited_subjects =
+                    match MultiSelect::new("Which subjects to mark?", subjects.clone())
+                        .with_all_selected_by_default()
+                        .prompt()
+                    {
+                        Ok(subs) => subs,
+                        Err(_) => {
+                            eprintln!("What happened? Cancelled or something?");
+                            return;
+                        }
+                    };
+
+                mark_classes(&edited_subjects, &mut attendance);
+            }
 
             x if x == options[2] => {
                 println!("{}", attendance);
@@ -97,6 +123,20 @@ fn main() {
             }
         }
     }
+}
+
+fn mark_classes(subjects: &Vec<timetable::Subject>, attendance: &mut Attendance) {
+    for &sub in subjects {
+        if let Some((_, entry)) = attendance
+            .subjects
+            .iter_mut()
+            .find(|&&mut (subject, _)| subject == sub)
+        {
+            entry.classes += 1;
+        }
+    }
+
+    println!("Marked +1 in {:?}", subjects);
 }
 
 fn load_attendance() -> Option<Attendance> {
