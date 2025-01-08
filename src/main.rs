@@ -118,7 +118,7 @@ fn main() {
             }
 
             _ => {
-                eprintln!("Wait how did you...?");
+                eprintln!("Wait why did you...?");
                 return;
             }
         }
