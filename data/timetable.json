@@ -1,34 +1,32 @@
 {
   "MON": [
-    "OOP",
-    "DSD",
-    "DM",
-    "DS",
-    "OOPLAB"
+    "NM",
+    "DBMS",
+    "DAA",
+    "OS"
   ],
   "TUE": [
-    "DM",
-    "DSD",
-    "DS",
-    "COA",
-    "NSSPT"
+    "DAA",
+    "DBMS",
+    "UHV",
+    "DBMSLAB"
   ],
   "WED": [
-    "DSD",
-    "OOP",
-    "COA",
-    "DS",
-    "BEELAB"
+    "OS",
+    "DBMS",
+    "NM",
+    "NSSPT"
   ],
   "THU": [
-    "DM",
-    "DSLAB",
-    "DSDLAB"
+    "DBMS",
+    "OS",
+    "UHV",
+    "SHELL"
   ],
   "FRI": [
-    "OOP",
-    "DS",
-    "COA",
-    "DM"
+    "UHV",
+    "OS",
+    "DAA",
+    "NMLAB"
   ]
 }
