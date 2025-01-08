@@ -1,4 +1,5 @@
 use std::{
+    collections::HashMap,
     fmt::Display,
     fs::{self, File},
     path::Path,
@@ -21,6 +22,7 @@ pub struct AttendanceEntry {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Attendance {
     pub subjects: Vec<(Subject, AttendanceEntry)>,
+    pub dates: HashMap<Subject, Vec<String>>,
 }
 
 impl Display for Attendance {
@@ -37,6 +39,8 @@ impl Display for Attendance {
 impl Attendance {
     pub fn new() -> Result<Self> {
         let attendance_path = Path::new("./data/attendance.csv");
+        let classes_path = Path::new("./data/classes.json");
+
         match attendance_path.try_exists() {
             Ok(false) => {
                 println!("Attendance File doesn't exists, trying to create a new one...");
@@ -67,25 +71,39 @@ impl Attendance {
         }
 
         let mut reader = csv::Reader::from_path(attendance_path)?;
-
         let _headers = reader.headers()?;
 
         let mut subjects = Vec::new();
+        let dates = {
+            if classes_path.exists() {
+                let text = std::fs::read_to_string(classes_path).unwrap();
+                serde_json::from_str(&text).unwrap()
+            } else {
+                HashMap::new()
+            }
+        };
 
         for result in reader.deserialize() {
             let entry: AttendanceEntry = result?;
             subjects.push((entry.subject, entry));
         }
 
-        Ok(Self { subjects })
+        Ok(Self { subjects, dates })
     }
 
     pub fn save(&mut self) -> Result<()> {
         let mut writer = csv::Writer::from_path("./data/attendance.csv")?;
+        let classes_path = "./data/classes.json";
 
         for (_, entry) in self.subjects.iter() {
             writer.serialize(entry)?;
         }
+
+        std::fs::write(
+            classes_path,
+            serde_json::to_string_pretty(&self.dates).unwrap(),
+        )
+        .unwrap();
 
         Ok(())
     }

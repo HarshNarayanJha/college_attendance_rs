@@ -4,7 +4,7 @@ pub mod attendance;
 pub mod timetable;
 
 use attendance::Attendance;
-use chrono::{DateTime, Datelike, Local};
+use chrono::{DateTime, Datelike, Local, NaiveDate};
 use inquire::{Confirm, DateSelect, MultiSelect, Select};
 use timetable::TimeTable;
 
@@ -63,7 +63,7 @@ fn main() {
 
         match option.as_str() {
             x if x == options[0] => {
-                mark_classes(todays_subjects, &mut attendance);
+                mark_classes(todays_subjects, &mut attendance, Local::now().date_naive());
             }
 
             x if x == options[1] => {
@@ -97,7 +97,11 @@ fn main() {
                         }
                     };
 
-                mark_classes(&edited_subjects, &mut attendance);
+                mark_classes(
+                    &edited_subjects,
+                    &mut attendance,
+                    selected_date.expect("Didn't selected any date, also didn't returned"),
+                );
             }
 
             x if x == options[2] => {
@@ -125,7 +129,7 @@ fn main() {
     }
 }
 
-fn mark_classes(subjects: &Vec<timetable::Subject>, attendance: &mut Attendance) {
+fn mark_classes(subjects: &Vec<timetable::Subject>, attendance: &mut Attendance, date: NaiveDate) {
     for &sub in subjects {
         if let Some((_, entry)) = attendance
             .subjects
@@ -133,10 +137,19 @@ fn mark_classes(subjects: &Vec<timetable::Subject>, attendance: &mut Attendance)
             .find(|&&mut (subject, _)| subject == sub)
         {
             entry.classes += 1;
+            attendance
+                .dates
+                .entry(sub)
+                .and_modify(|x| x.push(date.format("%d %b %Y, %a").to_string()))
+                .or_insert(Vec::from([date.format("%d %b %Y, %a").to_string()]));
         }
     }
 
-    println!("Marked +1 in {:?}", subjects);
+    println!(
+        "Marked +1 in {:?} on {}",
+        subjects,
+        date.format("%d %b %Y, %a")
+    );
 }
 
 fn load_attendance() -> Option<Attendance> {
