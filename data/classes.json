@@ -1,14 +1,34 @@
 {
-  "OS": [
-    "08 Jan 2025, Wed"
+  "NM": [
+    "08 Jan 2025, Wed",
+    "13 Jan 2025, Mon"
   ],
   "NSSPT": [
     "08 Jan 2025, Wed"
   ],
-  "NM": [
-    "08 Jan 2025, Wed"
-  ],
   "DBMS": [
-    "08 Jan 2025, Wed"
+    "08 Jan 2025, Wed",
+    "09 Jan 2025, Thu",
+    "13 Jan 2025, Mon"
+  ],
+  "DAA": [
+    "10 Jan 2025, Fri",
+    "13 Jan 2025, Mon"
+  ],
+  "NMLAB": [
+    "10 Jan 2025, Fri"
+  ],
+  "SHELL": [
+    "09 Jan 2025, Thu"
+  ],
+  "UHV": [
+    "09 Jan 2025, Thu",
+    "10 Jan 2025, Fri"
+  ],
+  "OS": [
+    "08 Jan 2025, Wed",
+    "09 Jan 2025, Thu",
+    "10 Jan 2025, Fri",
+    "13 Jan 2025, Mon"
   ]
 }
