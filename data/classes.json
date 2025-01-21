@@ -1,33 +1,41 @@
 {
-  "NM": [
-    "08 Jan 2025, Wed",
-    "13 Jan 2025, Mon"
-  ],
-  "NSSPT": [
-    "08 Jan 2025, Wed"
-  ],
-  "DBMS": [
+  "OS": [
     "08 Jan 2025, Wed",
     "09 Jan 2025, Thu",
-    "13 Jan 2025, Mon"
-  ],
-  "DAA": [
     "10 Jan 2025, Fri",
-    "13 Jan 2025, Mon"
+    "13 Jan 2025, Mon",
+    "15 Jan 2025, Wed",
+    "16 Jan 2025, Thu"
+  ],
+  "NM": [
+    "08 Jan 2025, Wed",
+    "13 Jan 2025, Mon",
+    "15 Jan 2025, Wed"
   ],
   "NMLAB": [
     "10 Jan 2025, Fri"
   ],
   "SHELL": [
-    "09 Jan 2025, Thu"
+    "09 Jan 2025, Thu",
+    "16 Jan 2025, Thu"
   ],
   "UHV": [
     "09 Jan 2025, Thu",
-    "10 Jan 2025, Fri"
+    "10 Jan 2025, Fri",
+    "16 Jan 2025, Thu"
   ],
-  "OS": [
+  "NSSPT": [
+    "08 Jan 2025, Wed",
+    "15 Jan 2025, Wed"
+  ],
+  "DBMS": [
     "08 Jan 2025, Wed",
     "09 Jan 2025, Thu",
+    "13 Jan 2025, Mon",
+    "15 Jan 2025, Wed",
+    "16 Jan 2025, Thu"
+  ],
+  "DAA": [
     "10 Jan 2025, Fri",
     "13 Jan 2025, Mon"
   ]
