@@ -2,10 +2,10 @@
   "MON": [
     "NM",
     "DBMS",
-    "DAA",
-    "OS"
+    "DAA"
   ],
   "TUE": [
+    "OS",
     "DAA",
     "DBMS",
     "UHV",
