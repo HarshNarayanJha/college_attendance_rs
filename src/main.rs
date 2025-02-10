@@ -1,14 +1,16 @@
 use std::{fs, path::Path};
 
+pub mod absents;
 pub mod attendance;
 pub mod classes;
 pub mod timetable;
 
+use absents::Absents;
 use attendance::Attendance;
 use chrono::{DateTime, Datelike, Local, NaiveDate};
 use classes::Classes;
 use inquire::{Confirm, DateSelect, MultiSelect, Select};
-use timetable::TimeTable;
+use timetable::{Subject, TimeTable};
 
 fn main() {
     let time_table = match load_time_table() {
@@ -22,6 +24,8 @@ fn main() {
     };
 
     let mut classes = load_classes();
+
+    let mut absents = load_absents();
 
     println!("Classes Counter in Rust");
     println!("This CLI allows you to keep track of total no. of classes each subject had in your college!\n");
@@ -51,10 +55,12 @@ fn main() {
             today.to_string()
         ),
         "2. Mark day's classes (Select Date)".to_string(),
-        "3. Check Class Counts".to_string(),
-        "4. Check Classes".to_string(),
-        "5. Save".to_string(),
-        "6. Exit".to_string(),
+        "3. Mark Absents (Select Date)".to_string(),
+        "4. Check Class Counts".to_string(),
+        "5. Check Classes".to_string(),
+        "6. Check Absents".to_string(),
+        "7. Save".to_string(),
+        "8. Exit".to_string(),
     ];
 
     loop {
@@ -116,6 +122,38 @@ fn main() {
             }
 
             x if x == options[2] => {
+                let selected_date = DateSelect::new("Which date to mark absents of?")
+                    .with_week_start(chrono::Weekday::Mon)
+                    .with_max_date(Local::now().date_naive())
+                    .prompt();
+
+                let subjects = match selected_date {
+                    Ok(d) => match time_table.subjects_on(d.weekday()) {
+                        Some(subs) => subs,
+                        None => {
+                            eprintln!("No classes, go sleep!");
+                            return;
+                        }
+                    },
+                    Err(_) => {
+                        eprintln!("No date selected?!");
+                        return;
+                    }
+                };
+
+                let edited_subjects =
+                    match MultiSelect::new("Which subjects to mark?", subjects.clone()).prompt() {
+                        Ok(subs) => subs,
+                        Err(_) => {
+                            eprintln!("What happened? Cancelled or something?");
+                            return;
+                        }
+                    };
+
+                mark_absents(&edited_subjects, &mut absents, selected_date.unwrap());
+            }
+
+            x if x == options[3] => {
                 println!("{}", attendance);
                 println!("Extra Classes");
                 for (sub, dates) in classes.extras.iter() {
@@ -123,20 +161,25 @@ fn main() {
                 }
             }
 
-            x if x == options[3] => {
+            x if x == options[4] => {
                 println!("{}", classes);
             }
 
-            x if x == options[4] => {
+            x if x == options[5] => {
+                println!("{}", absents);
+            }
+
+            x if x == options[6] => {
                 if let Ok(save) = Confirm::new("Sure to Save (y/n)?").prompt() {
                     if save {
                         attendance.save().ok();
                         classes.save().ok();
+                        absents.save().ok();
                     }
                 }
             }
 
-            x if x == options[5] => {
+            x if x == options[7] => {
                 println!("Thanks for using, exiting...");
                 break;
             }
@@ -177,6 +220,16 @@ fn mark_classes(
     );
 }
 
+fn mark_absents(subjects: &Vec<Subject>, absents: &mut Absents, on: NaiveDate) {
+    for &sub in subjects {
+        absents
+            .absents
+            .entry(sub)
+            .and_modify(|x| x.push(on.format("%d %b %Y, %a").to_string()))
+            .or_insert(Vec::from([on.format("%d %b %Y, %a").to_string()]));
+    }
+}
+
 fn load_attendance() -> Option<Attendance> {
     let attendance = match Attendance::new() {
         Ok(data) => data,
@@ -209,4 +262,8 @@ fn load_time_table() -> Option<TimeTable> {
 
 fn load_classes() -> Classes {
     Classes::new()
+}
+
+fn load_absents() -> Absents {
+    Absents::new()
 }
