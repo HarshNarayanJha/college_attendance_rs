@@ -1,10 +1,12 @@
 use std::{fs, path::Path};
 
 pub mod attendance;
+pub mod classes;
 pub mod timetable;
 
 use attendance::Attendance;
 use chrono::{DateTime, Datelike, Local, NaiveDate};
+use classes::Classes;
 use inquire::{Confirm, DateSelect, MultiSelect, Select};
 use timetable::TimeTable;
 
@@ -18,6 +20,8 @@ fn main() {
         Some(value) => value,
         None => return,
     };
+
+    let mut classes = load_classes();
 
     println!("Classes Counter in Rust");
     println!("This CLI allows you to keep track of total no. of classes each subject had in your college!\n");
@@ -47,9 +51,10 @@ fn main() {
             today.to_string()
         ),
         "2. Mark day's classes (Select Date)".to_string(),
-        "3. Check Classes".to_string(),
-        "4. Save".to_string(),
-        "5. Exit".to_string(),
+        "3. Check Class Counts".to_string(),
+        "4. Check Classes".to_string(),
+        "5. Save".to_string(),
+        "6. Exit".to_string(),
     ];
 
     loop {
@@ -63,7 +68,12 @@ fn main() {
 
         match option.as_str() {
             x if x == options[0] => {
-                mark_classes(todays_subjects, &mut attendance, Local::now().date_naive());
+                mark_classes(
+                    todays_subjects,
+                    &mut attendance,
+                    &mut classes,
+                    Local::now().date_naive(),
+                );
             }
 
             x if x == options[1] => {
@@ -100,23 +110,33 @@ fn main() {
                 mark_classes(
                     &edited_subjects,
                     &mut attendance,
+                    &mut classes,
                     selected_date.expect("Didn't selected any date, also didn't returned"),
                 );
             }
 
             x if x == options[2] => {
                 println!("{}", attendance);
+                println!("Extra Classes");
+                for (sub, dates) in classes.extras.iter() {
+                    println!("{}\t\t{}", sub, dates.len());
+                }
             }
 
             x if x == options[3] => {
+                println!("{}", classes);
+            }
+
+            x if x == options[4] => {
                 if let Ok(save) = Confirm::new("Sure to Save (y/n)?").prompt() {
                     if save {
                         attendance.save().ok();
+                        classes.save().ok();
                     }
                 }
             }
 
-            x if x == options[4] => {
+            x if x == options[5] => {
                 println!("Thanks for using, exiting...");
                 break;
             }
@@ -129,7 +149,12 @@ fn main() {
     }
 }
 
-fn mark_classes(subjects: &Vec<timetable::Subject>, attendance: &mut Attendance, date: NaiveDate) {
+fn mark_classes(
+    subjects: &Vec<timetable::Subject>,
+    attendance: &mut Attendance,
+    classes: &mut Classes,
+    date: NaiveDate,
+) {
     for &sub in subjects {
         if let Some((_, entry)) = attendance
             .subjects
@@ -137,8 +162,8 @@ fn mark_classes(subjects: &Vec<timetable::Subject>, attendance: &mut Attendance,
             .find(|&&mut (subject, _)| subject == sub)
         {
             entry.classes += 1;
-            attendance
-                .dates
+            classes
+                .classes
                 .entry(sub)
                 .and_modify(|x| x.push(date.format("%d %b %Y, %a").to_string()))
                 .or_insert(Vec::from([date.format("%d %b %Y, %a").to_string()]));
@@ -180,4 +205,8 @@ fn load_time_table() -> Option<TimeTable> {
         }
     };
     Some(time_table)
+}
+
+fn load_classes() -> Classes {
+    Classes::new()
 }
