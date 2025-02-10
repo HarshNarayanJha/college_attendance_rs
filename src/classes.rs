@@ -2,7 +2,7 @@ use std::{collections::HashMap, fmt::Display, path::Path};
 
 use serde::{Deserialize, Serialize};
 
-use crate::timetable::Subject;
+use crate::{absents::Absents, timetable::Subject};
 
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "PascalCase")]
@@ -20,10 +20,17 @@ pub struct Classes {
 impl Display for Classes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         writeln!(f, "\nSubject\t\tClasses").ok();
+        let absents = Absents::new();
         for (sub, entry) in self.classes.iter() {
             write!(f, "{:?}", sub).ok();
             for date in entry {
-                writeln!(f, "\t\t{}", date).ok();
+                write!(f, "\t\t{}", date).ok();
+                if let Some(absent_dates) = absents.absents.get(sub) {
+                    if absent_dates.contains(date) {
+                        write!(f, " (absent 🏃‍♂️)").ok();
+                    }
+                }
+                writeln!(f, "").ok();
             }
             writeln!(f, "").ok();
         }
@@ -32,7 +39,13 @@ impl Display for Classes {
         for (sub, entry) in self.extras.iter() {
             write!(f, "{:?}", sub).ok();
             for date in entry {
-                writeln!(f, "\t\t{}", date).ok();
+                write!(f, "\t\t{}", date).ok();
+                if let Some(absent_dates) = absents.extras.get(sub) {
+                    if absent_dates.contains(date) {
+                        write!(f, " (absent 🏃‍♂️)").ok();
+                    }
+                }
+                writeln!(f, "").ok();
             }
             writeln!(f, "").ok();
         }
