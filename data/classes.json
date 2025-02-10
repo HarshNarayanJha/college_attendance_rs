@@ -1,5 +1,58 @@
 {
   "classes": {
+    "NMLAB": [
+      "10 Jan 2025, Fri",
+      "24 Jan 2025, Fri",
+      "31 Jan 2025, Fri",
+      "07 Feb 2025, Fri"
+    ],
+    "NSSPT": [
+      "08 Jan 2025, Wed",
+      "22 Jan 2025, Wed",
+      "29 Jan 2025, Wed"
+    ],
+    "DBMS": [
+      "08 Jan 2025, Wed",
+      "09 Jan 2025, Thu",
+      "13 Jan 2025, Mon",
+      "15 Jan 2025, Wed",
+      "16 Jan 2025, Thu",
+      "20 Jan 2025, Mon",
+      "21 Jan 2025, Tue",
+      "22 Jan 2025, Wed",
+      "23 Jan 2025, Thu",
+      "27 Jan 2025, Mon",
+      "28 Jan 2025, Tue",
+      "29 Jan 2025, Wed",
+      "30 Jan 2025, Thu",
+      "04 Feb 2025, Tue",
+      "06 Feb 2025, Thu",
+      "10 Feb 2025, Mon"
+    ],
+    "UHV": [
+      "09 Jan 2025, Thu",
+      "10 Jan 2025, Fri",
+      "16 Jan 2025, Thu",
+      "21 Jan 2025, Tue",
+      "23 Jan 2025, Thu",
+      "24 Jan 2025, Fri",
+      "30 Jan 2025, Thu",
+      "31 Jan 2025, Fri",
+      "04 Feb 2025, Tue",
+      "06 Feb 2025, Thu",
+      "07 Feb 2025, Fri"
+    ],
+    "SHELL": [
+      "09 Jan 2025, Thu",
+      "16 Jan 2025, Thu",
+      "23 Jan 2025, Thu",
+      "06 Feb 2025, Thu"
+    ],
+    "DBMSLAB": [
+      "21 Jan 2025, Tue",
+      "28 Jan 2025, Tue",
+      "04 Feb 2025, Tue"
+    ],
     "OS": [
       "08 Jan 2025, Wed",
       "09 Jan 2025, Thu",
@@ -28,8 +81,7 @@
       "27 Jan 2025, Mon",
       "28 Jan 2025, Tue",
       "04 Feb 2025, Tue",
-      "07 Feb 2025, Fri",
-      "10 Feb 2025, Mon"
+      "07 Feb 2025, Fri"
     ],
     "NM": [
       "08 Jan 2025, Wed",
@@ -40,59 +92,6 @@
       "27 Jan 2025, Mon",
       "29 Jan 2025, Wed",
       "10 Feb 2025, Mon"
-    ],
-    "NSSPT": [
-      "08 Jan 2025, Wed",
-      "22 Jan 2025, Wed",
-      "29 Jan 2025, Wed"
-    ],
-    "UHV": [
-      "09 Jan 2025, Thu",
-      "10 Jan 2025, Fri",
-      "16 Jan 2025, Thu",
-      "21 Jan 2025, Tue",
-      "23 Jan 2025, Thu",
-      "24 Jan 2025, Fri",
-      "30 Jan 2025, Thu",
-      "31 Jan 2025, Fri",
-      "04 Feb 2025, Tue",
-      "06 Feb 2025, Thu",
-      "07 Feb 2025, Fri"
-    ],
-    "NMLAB": [
-      "10 Jan 2025, Fri",
-      "24 Jan 2025, Fri",
-      "31 Jan 2025, Fri",
-      "07 Feb 2025, Fri"
-    ],
-    "DBMS": [
-      "08 Jan 2025, Wed",
-      "09 Jan 2025, Thu",
-      "13 Jan 2025, Mon",
-      "15 Jan 2025, Wed",
-      "16 Jan 2025, Thu",
-      "20 Jan 2025, Mon",
-      "21 Jan 2025, Tue",
-      "22 Jan 2025, Wed",
-      "23 Jan 2025, Thu",
-      "27 Jan 2025, Mon",
-      "28 Jan 2025, Tue",
-      "29 Jan 2025, Wed",
-      "30 Jan 2025, Thu",
-      "04 Feb 2025, Tue",
-      "06 Feb 2025, Thu",
-      "10 Feb 2025, Mon"
-    ],
-    "SHELL": [
-      "09 Jan 2025, Thu",
-      "16 Jan 2025, Thu",
-      "23 Jan 2025, Thu",
-      "06 Feb 2025, Thu"
-    ],
-    "DBMSLAB": [
-      "21 Jan 2025, Tue",
-      "28 Jan 2025, Tue",
-      "04 Feb 2025, Tue"
     ]
   },
   "extras": {

@@ -4,6 +4,13 @@ use serde::{Deserialize, Serialize};
 
 use crate::timetable::Subject;
 
+#[derive(Debug, Deserialize, Serialize)]
+#[serde(rename_all = "PascalCase")]
+struct ClassEntry {
+    subject: Subject,
+    classes: u32,
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Classes {
     pub classes: HashMap<Subject, Vec<String>>,
@@ -49,9 +56,19 @@ impl Classes {
         }
     }
 
-    pub fn save(&self) -> Result<(), ()> {
+    pub fn save(&self) -> Result<(), std::io::Error> {
         let classes_path = Path::new("./data/classes.json");
         std::fs::write(classes_path, serde_json::to_string_pretty(&self).unwrap()).unwrap();
+
+        let mut writer = csv::Writer::from_path("./data/class_counts.csv")?;
+
+        for (&sub, entry) in self.classes.iter().chain(self.extras.iter()) {
+            writer.serialize(ClassEntry {
+                subject: sub,
+                classes: entry.len() as u32,
+            })?;
+        }
+
         Ok(())
     }
 }
