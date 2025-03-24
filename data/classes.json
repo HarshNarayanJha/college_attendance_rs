@@ -1,41 +1,12 @@
 {
   "classes": {
-    "UHV": [
-      "09 Jan 2025, Thu",
+    "NMLAB": [
       "10 Jan 2025, Fri",
-      "16 Jan 2025, Thu",
-      "17 Jan 2025, Fri",
-      "21 Jan 2025, Tue",
-      "28 Jan 2025, Tue",
-      "23 Jan 2025, Thu",
       "24 Jan 2025, Fri",
-      "30 Jan 2025, Thu",
       "31 Jan 2025, Fri",
-      "04 Feb 2025, Tue",
-      "06 Feb 2025, Thu",
       "07 Feb 2025, Fri",
-      "11 Feb 2025, Tue",
       "14 Feb 2025, Fri",
-      "18 Feb 2025, Tue",
-      "20 Feb 2025, Thu",
-      "06 Mar 2025, Thu",
-      "18 Mar 2025, Tue"
-    ],
-    "DBMSLAB": [
-      "21 Jan 2025, Tue",
-      "28 Jan 2025, Tue",
-      "04 Feb 2025, Tue",
-      "11 Feb 2025, Tue",
-      "18 Feb 2025, Tue",
-      "04 Mar 2025, Tue"
-    ],
-    "SHELL": [
-      "09 Jan 2025, Thu",
-      "16 Jan 2025, Thu",
-      "23 Jan 2025, Thu",
-      "06 Feb 2025, Thu",
-      "20 Feb 2025, Thu",
-      "06 Mar 2025, Thu"
+      "07 Mar 2025, Fri"
     ],
     "OS": [
       "08 Jan 2025, Wed",
@@ -64,38 +35,34 @@
       "05 Mar 2025, Wed",
       "06 Mar 2025, Thu",
       "07 Mar 2025, Fri",
-      "18 Mar 2025, Tue"
+      "18 Mar 2025, Tue",
+      "19 Mar 2025, Wed",
+      "20 Mar 2025, Thu",
+      "21 Mar 2025, Fri"
     ],
-    "DAA": [
-      "10 Jan 2025, Fri",
-      "13 Jan 2025, Mon",
-      "20 Jan 2025, Mon",
+    "DBMSLAB": [
       "21 Jan 2025, Tue",
-      "24 Jan 2025, Fri",
-      "27 Jan 2025, Mon",
       "28 Jan 2025, Tue",
       "04 Feb 2025, Tue",
-      "07 Feb 2025, Fri",
-      "14 Feb 2025, Fri",
-      "04 Mar 2025, Tue",
-      "07 Mar 2025, Fri",
-      "17 Mar 2025, Mon",
-      "18 Mar 2025, Tue"
+      "11 Feb 2025, Tue",
+      "18 Feb 2025, Tue",
+      "04 Mar 2025, Tue"
     ],
-    "NSSPT": [
+    "NM": [
       "08 Jan 2025, Wed",
+      "13 Jan 2025, Mon",
+      "15 Jan 2025, Wed",
+      "20 Jan 2025, Mon",
       "22 Jan 2025, Wed",
+      "27 Jan 2025, Mon",
       "29 Jan 2025, Wed",
+      "10 Feb 2025, Mon",
+      "17 Feb 2025, Mon",
       "19 Feb 2025, Wed",
-      "05 Mar 2025, Wed"
-    ],
-    "NMLAB": [
-      "10 Jan 2025, Fri",
-      "24 Jan 2025, Fri",
-      "31 Jan 2025, Fri",
-      "07 Feb 2025, Fri",
-      "14 Feb 2025, Fri",
-      "07 Mar 2025, Fri"
+      "05 Mar 2025, Wed",
+      "17 Mar 2025, Mon",
+      "19 Mar 2025, Wed",
+      "24 Mar 2025, Mon"
     ],
     "DBMS": [
       "08 Jan 2025, Wed",
@@ -119,21 +86,68 @@
       "05 Mar 2025, Wed",
       "06 Mar 2025, Thu",
       "17 Mar 2025, Mon",
-      "18 Mar 2025, Tue"
+      "18 Mar 2025, Tue",
+      "19 Mar 2025, Wed",
+      "20 Mar 2025, Thu",
+      "24 Mar 2025, Mon"
     ],
-    "NM": [
+    "UHV": [
+      "09 Jan 2025, Thu",
+      "10 Jan 2025, Fri",
+      "16 Jan 2025, Thu",
+      "17 Jan 2025, Fri",
+      "21 Jan 2025, Tue",
+      "28 Jan 2025, Tue",
+      "23 Jan 2025, Thu",
+      "24 Jan 2025, Fri",
+      "30 Jan 2025, Thu",
+      "31 Jan 2025, Fri",
+      "04 Feb 2025, Tue",
+      "06 Feb 2025, Thu",
+      "07 Feb 2025, Fri",
+      "11 Feb 2025, Tue",
+      "14 Feb 2025, Fri",
+      "18 Feb 2025, Tue",
+      "20 Feb 2025, Thu",
+      "06 Mar 2025, Thu",
+      "18 Mar 2025, Tue",
+      "20 Mar 2025, Thu",
+      "21 Mar 2025, Fri"
+    ],
+    "SHELL": [
+      "09 Jan 2025, Thu",
+      "16 Jan 2025, Thu",
+      "23 Jan 2025, Thu",
+      "06 Feb 2025, Thu",
+      "20 Feb 2025, Thu",
+      "06 Mar 2025, Thu",
+      "20 Mar 2025, Thu"
+    ],
+    "NSSPT": [
       "08 Jan 2025, Wed",
-      "13 Jan 2025, Mon",
-      "15 Jan 2025, Wed",
-      "20 Jan 2025, Mon",
       "22 Jan 2025, Wed",
-      "27 Jan 2025, Mon",
       "29 Jan 2025, Wed",
-      "10 Feb 2025, Mon",
-      "17 Feb 2025, Mon",
       "19 Feb 2025, Wed",
       "05 Mar 2025, Wed",
-      "17 Mar 2025, Mon"
+      "19 Mar 2025, Wed"
+    ],
+    "DAA": [
+      "10 Jan 2025, Fri",
+      "13 Jan 2025, Mon",
+      "20 Jan 2025, Mon",
+      "21 Jan 2025, Tue",
+      "24 Jan 2025, Fri",
+      "27 Jan 2025, Mon",
+      "28 Jan 2025, Tue",
+      "04 Feb 2025, Tue",
+      "07 Feb 2025, Fri",
+      "14 Feb 2025, Fri",
+      "04 Mar 2025, Tue",
+      "07 Mar 2025, Fri",
+      "17 Mar 2025, Mon",
+      "18 Mar 2025, Tue",
+      "21 Mar 2025, Fri",
+      "24 Mar 2025, Mon"
     ]
   },
   "extras": {
