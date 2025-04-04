@@ -8,6 +8,35 @@
       "14 Feb 2025, Fri",
       "07 Mar 2025, Fri"
     ],
+    "DBMSLAB": [
+      "21 Jan 2025, Tue",
+      "28 Jan 2025, Tue",
+      "04 Feb 2025, Tue",
+      "11 Feb 2025, Tue",
+      "18 Feb 2025, Tue",
+      "04 Mar 2025, Tue",
+      "25 Mar 2025, Tue"
+    ],
+    "NSSPT": [
+      "08 Jan 2025, Wed",
+      "22 Jan 2025, Wed",
+      "29 Jan 2025, Wed",
+      "19 Feb 2025, Wed",
+      "05 Mar 2025, Wed",
+      "19 Mar 2025, Wed",
+      "02 Apr 2025, Wed"
+    ],
+    "SHELL": [
+      "09 Jan 2025, Thu",
+      "16 Jan 2025, Thu",
+      "23 Jan 2025, Thu",
+      "06 Feb 2025, Thu",
+      "20 Feb 2025, Thu",
+      "06 Mar 2025, Thu",
+      "20 Mar 2025, Thu",
+      "27 Mar 2025, Thu",
+      "03 Apr 2025, Thu"
+    ],
     "OS": [
       "08 Jan 2025, Wed",
       "09 Jan 2025, Thu",
@@ -38,31 +67,12 @@
       "18 Mar 2025, Tue",
       "19 Mar 2025, Wed",
       "20 Mar 2025, Thu",
-      "21 Mar 2025, Fri"
-    ],
-    "DBMSLAB": [
-      "21 Jan 2025, Tue",
-      "28 Jan 2025, Tue",
-      "04 Feb 2025, Tue",
-      "11 Feb 2025, Tue",
-      "18 Feb 2025, Tue",
-      "04 Mar 2025, Tue"
-    ],
-    "NM": [
-      "08 Jan 2025, Wed",
-      "13 Jan 2025, Mon",
-      "15 Jan 2025, Wed",
-      "20 Jan 2025, Mon",
-      "22 Jan 2025, Wed",
-      "27 Jan 2025, Mon",
-      "29 Jan 2025, Wed",
-      "10 Feb 2025, Mon",
-      "17 Feb 2025, Mon",
-      "19 Feb 2025, Wed",
-      "05 Mar 2025, Wed",
-      "17 Mar 2025, Mon",
-      "19 Mar 2025, Wed",
-      "24 Mar 2025, Mon"
+      "21 Mar 2025, Fri",
+      "25 Mar 2025, Tue",
+      "26 Mar 2025, Wed",
+      "27 Mar 2025, Thu",
+      "02 Apr 2025, Wed",
+      "03 Apr 2025, Thu"
     ],
     "DBMS": [
       "08 Jan 2025, Wed",
@@ -89,7 +99,12 @@
       "18 Mar 2025, Tue",
       "19 Mar 2025, Wed",
       "20 Mar 2025, Thu",
-      "24 Mar 2025, Mon"
+      "24 Mar 2025, Mon",
+      "25 Mar 2025, Tue",
+      "26 Mar 2025, Wed",
+      "27 Mar 2025, Thu",
+      "02 Apr 2025, Wed",
+      "03 Apr 2025, Thu"
     ],
     "UHV": [
       "09 Jan 2025, Thu",
@@ -112,24 +127,28 @@
       "06 Mar 2025, Thu",
       "18 Mar 2025, Tue",
       "20 Mar 2025, Thu",
-      "21 Mar 2025, Fri"
+      "21 Mar 2025, Fri",
+      "25 Mar 2025, Tue",
+      "27 Mar 2025, Thu",
+      "03 Apr 2025, Thu"
     ],
-    "SHELL": [
-      "09 Jan 2025, Thu",
-      "16 Jan 2025, Thu",
-      "23 Jan 2025, Thu",
-      "06 Feb 2025, Thu",
-      "20 Feb 2025, Thu",
-      "06 Mar 2025, Thu",
-      "20 Mar 2025, Thu"
-    ],
-    "NSSPT": [
+    "NM": [
       "08 Jan 2025, Wed",
+      "13 Jan 2025, Mon",
+      "15 Jan 2025, Wed",
+      "20 Jan 2025, Mon",
       "22 Jan 2025, Wed",
+      "27 Jan 2025, Mon",
       "29 Jan 2025, Wed",
+      "10 Feb 2025, Mon",
+      "17 Feb 2025, Mon",
       "19 Feb 2025, Wed",
       "05 Mar 2025, Wed",
-      "19 Mar 2025, Wed"
+      "17 Mar 2025, Mon",
+      "19 Mar 2025, Wed",
+      "24 Mar 2025, Mon",
+      "26 Mar 2025, Wed",
+      "02 Apr 2025, Wed"
     ],
     "DAA": [
       "10 Jan 2025, Fri",
@@ -147,7 +166,8 @@
       "17 Mar 2025, Mon",
       "18 Mar 2025, Tue",
       "21 Mar 2025, Fri",
-      "24 Mar 2025, Mon"
+      "24 Mar 2025, Mon",
+      "25 Mar 2025, Tue"
     ]
   },
   "extras": {
