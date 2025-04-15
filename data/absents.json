@@ -1,17 +1,25 @@
 {
   "absents": {
-    "DBMS": [
+    "UHV": [
       "06 Feb 2025, Thu",
-      "17 Mar 2025, Mon"
-    ],
-    "NM": [
-      "17 Mar 2025, Mon"
+      "04 Apr 2025, Fri"
     ],
     "DAA": [
-      "17 Mar 2025, Mon"
+      "17 Mar 2025, Mon",
+      "07 Apr 2025, Mon"
     ],
-    "UHV": [
-      "06 Feb 2025, Thu"
+    "DBMS": [
+      "06 Feb 2025, Thu",
+      "17 Mar 2025, Mon",
+      "07 Apr 2025, Mon"
+    ],
+    "OS": [
+      "09 Apr 2025, Wed"
+    ],
+    "NM": [
+      "17 Mar 2025, Mon",
+      "07 Apr 2025, Mon",
+      "09 Apr 2025, Wed"
     ]
   },
   "extras": {
