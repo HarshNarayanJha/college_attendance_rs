@@ -1,32 +1,7 @@
 {
-  "MON": [
-    "NM",
-    "DBMS",
-    "DAA"
-  ],
-  "TUE": [
-    "OS",
-    "DAA",
-    "DBMS",
-    "UHV",
-    "DBMSLAB"
-  ],
-  "WED": [
-    "OS",
-    "DBMS",
-    "NM",
-    "NSSPT"
-  ],
-  "THU": [
-    "UHV",
-    "DBMS",
-    "OS",
-    "SHELL"
-  ],
-  "FRI": [
-    "UHV",
-    "OS",
-    "DAA",
-    "NMLAB"
-  ]
+  "MON": ["OT", "SP", "FLAT", "DMW", "DCCN"],
+  "TUE": ["FLAT", "SE", "DCCN", "SELAB"],
+  "WED": ["DCCNLAB", "OT", "SP", "DMW", "SE", "DCCN"],
+  "THU": ["FLAT", "BITW", "DMWLAB"],
+  "FRI": ["SE", "DCCN", "OT", "SP", "FLAT", "DMWLAB"]
 }

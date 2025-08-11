@@ -15,7 +15,20 @@ pub enum Subject {
     NSSPT,
     DBMSLAB,
     NMLAB,
-    SHELL
+    SHELL,
+
+    // SEM 5
+    DCCN,
+    BITW,
+    DCCNLAB,
+    SP,
+    OT,
+    SE,
+    SELAB,
+    FLAT,
+    DMW,
+    DMWLAB,
+    SC,
 }
 
 impl Display for Subject {
@@ -30,6 +43,19 @@ impl Display for Subject {
             Subject::DBMSLAB => write!(f, "DBMSLAB"),
             Subject::NMLAB => write!(f, "NMLAB"),
             Subject::SHELL => write!(f, "SHELL"),
+
+            // SEM 5
+            Subject::DCCN => write!(f, "DCCN"),
+            Subject::BITW => write!(f, "BITW"),
+            Subject::DCCNLAB => write!(f, "DCCNLAB"),
+            Subject::SP => write!(f, "SP"),
+            Subject::OT => write!(f, "OT"),
+            Subject::SE => write!(f, "SE"),
+            Subject::SELAB => write!(f, "SELAB"),
+            Subject::FLAT => write!(f, "FLAT"),
+            Subject::DMW => write!(f, "DMW"),
+            Subject::DMWLAB => write!(f, "DMWLAB"),
+            Subject::SC => write!(f, "SC"),
         }
     }
 }
@@ -48,7 +74,7 @@ impl TimeTable {
     pub fn new(json_data: &str) -> Result<Self> {
         match serde_json::from_str(json_data) {
             Ok(data) => Ok(data),
-            Err(e) => Err(e)
+            Err(e) => Err(e),
         }
     }
 
@@ -59,7 +85,7 @@ impl TimeTable {
             Weekday::Wed => Some(&self.wed),
             Weekday::Thu => Some(&self.thu),
             Weekday::Fri => Some(&self.fri),
-            _ => None
+            _ => None,
         }
     }
 }
