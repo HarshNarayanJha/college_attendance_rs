@@ -2,6 +2,6 @@
   "MON": ["OT", "SP", "FLAT", "DMW", "DCCN"],
   "TUE": ["FLAT", "SE", "DCCN", "SELAB"],
   "WED": ["DCCNLAB", "OT", "SP", "DMW", "SE", "DCCN"],
-  "THU": ["FLAT", "BITW", "DMWLAB"],
-  "FRI": ["SE", "DCCN", "OT", "SP", "FLAT", "DMWLAB"]
+  "THU": ["DMWLAB"],
+  "FRI": ["DMW", "SE", "OT", "SP", "FLAT", "BITWLAB"]
 }
