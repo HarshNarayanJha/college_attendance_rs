@@ -22,6 +22,7 @@ fn main() {
     println!("Classes Counter in Rust");
     println!("This CLI allows you to keep track of total no. of classes each subject had in your college!\n");
 
+    let last_day = classes.last_marked_date().unwrap();
     let local: DateTime<Local> = Local::now();
     let today = local.format("%d %b %Y");
     let day = local.weekday();
@@ -34,6 +35,7 @@ fn main() {
         }
     };
 
+    println!("Last day marked was {}", last_day);
     println!("{}", today);
     println!("Today is {}", day);
     println!("Today's subjects are {:?}", todays_subjects);
@@ -66,11 +68,7 @@ fn main() {
 
         match option.as_str() {
             x if x == options[0] => {
-                mark_classes(
-                    todays_subjects,
-                    &mut classes,
-                    Local::now().date_naive(),
-                );
+                mark_classes(todays_subjects, &mut classes, Local::now().date_naive());
             }
 
             x if x == options[1] => {
@@ -183,11 +181,7 @@ fn main() {
     }
 }
 
-fn mark_classes(
-    subjects: &Vec<timetable::Subject>,
-    classes: &mut Classes,
-    date: NaiveDate,
-) {
+fn mark_classes(subjects: &Vec<timetable::Subject>, classes: &mut Classes, date: NaiveDate) {
     for &sub in subjects {
         classes
             .classes

@@ -84,4 +84,19 @@ impl Classes {
 
         Ok(())
     }
+
+    pub fn last_marked_date(&self) -> Result<String, std::io::Error> {
+        let mut last_day = String::new();
+
+        let mut max_dates = 0;
+
+        for (_, dates) in self.classes.iter() {
+            if dates.len() > max_dates {
+                max_dates = dates.len();
+                last_day = dates.last().unwrap().clone();
+            }
+        }
+
+        Ok(last_day)
+    }
 }
