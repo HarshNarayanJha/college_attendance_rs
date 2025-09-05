@@ -1,6 +1,6 @@
 {
   "classes": {
-    "SP": [
+    "OT": [
       "04 Aug 2025, Mon",
       "06 Aug 2025, Wed",
       "08 Aug 2025, Fri",
@@ -9,6 +9,24 @@
       "18 Aug 2025, Mon",
       "20 Aug 2025, Wed",
       "22 Aug 2025, Fri",
+      "27 Aug 2025, Wed",
+      "29 Aug 2025, Fri",
+      "01 Sep 2025, Mon",
+      "03 Sep 2025, Wed"
+    ],
+    "BITW": [
+      "07 Aug 2025, Thu",
+      "22 Aug 2025, Fri",
+      "29 Aug 2025, Fri"
+    ],
+    "DMW": [
+      "06 Aug 2025, Wed",
+      "11 Aug 2025, Mon",
+      "13 Aug 2025, Wed",
+      "18 Aug 2025, Mon",
+      "20 Aug 2025, Wed",
+      "22 Aug 2025, Fri",
+      "27 Aug 2025, Wed",
       "29 Aug 2025, Fri",
       "01 Sep 2025, Mon"
     ],
@@ -40,22 +58,18 @@
       "29 Aug 2025, Fri",
       "02 Sep 2025, Tue"
     ],
-    "DMW": [
+    "SP": [
+      "04 Aug 2025, Mon",
       "06 Aug 2025, Wed",
+      "08 Aug 2025, Fri",
       "11 Aug 2025, Mon",
       "13 Aug 2025, Wed",
       "18 Aug 2025, Mon",
       "20 Aug 2025, Wed",
       "22 Aug 2025, Fri",
-      "27 Aug 2025, Wed",
       "29 Aug 2025, Fri",
-      "01 Sep 2025, Mon"
-    ],
-    "SELAB": [
-      "12 Aug 2025, Tue",
-      "19 Aug 2025, Tue",
-      "26 Aug 2025, Tue",
-      "02 Sep 2025, Tue"
+      "01 Sep 2025, Mon",
+      "03 Sep 2025, Wed"
     ],
     "FLAT": [
       "04 Aug 2025, Mon",
@@ -71,34 +85,23 @@
       "01 Sep 2025, Mon",
       "02 Sep 2025, Tue"
     ],
+    "SELAB": [
+      "12 Aug 2025, Tue",
+      "19 Aug 2025, Tue",
+      "26 Aug 2025, Tue",
+      "02 Sep 2025, Tue"
+    ],
     "DCCNLAB": [
       "06 Aug 2025, Wed",
       "13 Aug 2025, Wed",
       "20 Aug 2025, Wed",
-      "27 Aug 2025, Wed"
-    ],
-    "OT": [
-      "04 Aug 2025, Mon",
-      "06 Aug 2025, Wed",
-      "08 Aug 2025, Fri",
-      "11 Aug 2025, Mon",
-      "13 Aug 2025, Wed",
-      "18 Aug 2025, Mon",
-      "20 Aug 2025, Wed",
-      "22 Aug 2025, Fri",
       "27 Aug 2025, Wed",
-      "29 Aug 2025, Fri",
-      "01 Sep 2025, Mon"
+      "03 Sep 2025, Wed"
     ],
     "DMWLAB": [
       "14 Aug 2025, Thu",
       "21 Aug 2025, Thu",
       "28 Aug 2025, Thu"
-    ],
-    "BITW": [
-      "07 Aug 2025, Thu",
-      "22 Aug 2025, Fri",
-      "29 Aug 2025, Fri"
     ]
   },
   "extras": {}
