@@ -1,34 +1,16 @@
 {
   "classes": {
-    "OT": [
-      "04 Aug 2025, Mon",
+    "DCCNLAB": [
       "06 Aug 2025, Wed",
-      "08 Aug 2025, Fri",
-      "11 Aug 2025, Mon",
       "13 Aug 2025, Wed",
-      "18 Aug 2025, Mon",
       "20 Aug 2025, Wed",
-      "22 Aug 2025, Fri",
       "27 Aug 2025, Wed",
-      "29 Aug 2025, Fri",
-      "01 Sep 2025, Mon",
       "03 Sep 2025, Wed"
     ],
-    "BITW": [
-      "07 Aug 2025, Thu",
-      "22 Aug 2025, Fri",
-      "29 Aug 2025, Fri"
-    ],
-    "DMW": [
-      "06 Aug 2025, Wed",
-      "11 Aug 2025, Mon",
-      "13 Aug 2025, Wed",
-      "18 Aug 2025, Mon",
-      "20 Aug 2025, Wed",
-      "22 Aug 2025, Fri",
-      "27 Aug 2025, Wed",
-      "29 Aug 2025, Fri",
-      "01 Sep 2025, Mon"
+    "DMWLAB": [
+      "14 Aug 2025, Thu",
+      "21 Aug 2025, Thu",
+      "28 Aug 2025, Thu"
     ],
     "DCCN": [
       "04 Aug 2025, Mon",
@@ -43,7 +25,50 @@
       "26 Aug 2025, Tue",
       "27 Aug 2025, Wed",
       "01 Sep 2025, Mon",
-      "02 Sep 2025, Tue"
+      "02 Sep 2025, Tue",
+      "08 Sep 2025, Mon"
+    ],
+    "FLAT": [
+      "04 Aug 2025, Mon",
+      "07 Aug 2025, Thu",
+      "08 Aug 2025, Fri",
+      "11 Aug 2025, Mon",
+      "12 Aug 2025, Tue",
+      "18 Aug 2025, Mon",
+      "19 Aug 2025, Tue",
+      "22 Aug 2025, Fri",
+      "26 Aug 2025, Tue",
+      "29 Aug 2025, Fri",
+      "01 Sep 2025, Mon",
+      "02 Sep 2025, Tue",
+      "08 Sep 2025, Mon"
+    ],
+    "OT": [
+      "04 Aug 2025, Mon",
+      "06 Aug 2025, Wed",
+      "08 Aug 2025, Fri",
+      "11 Aug 2025, Mon",
+      "13 Aug 2025, Wed",
+      "18 Aug 2025, Mon",
+      "20 Aug 2025, Wed",
+      "22 Aug 2025, Fri",
+      "27 Aug 2025, Wed",
+      "29 Aug 2025, Fri",
+      "01 Sep 2025, Mon",
+      "03 Sep 2025, Wed",
+      "08 Sep 2025, Mon"
+    ],
+    "DMW": [
+      "06 Aug 2025, Wed",
+      "11 Aug 2025, Mon",
+      "13 Aug 2025, Wed",
+      "18 Aug 2025, Mon",
+      "20 Aug 2025, Wed",
+      "22 Aug 2025, Fri",
+      "27 Aug 2025, Wed",
+      "29 Aug 2025, Fri",
+      "01 Sep 2025, Mon",
+      "08 Sep 2025, Mon"
     ],
     "SE": [
       "06 Aug 2025, Wed",
@@ -58,6 +83,17 @@
       "29 Aug 2025, Fri",
       "02 Sep 2025, Tue"
     ],
+    "BITW": [
+      "07 Aug 2025, Thu",
+      "22 Aug 2025, Fri",
+      "29 Aug 2025, Fri"
+    ],
+    "SELAB": [
+      "12 Aug 2025, Tue",
+      "19 Aug 2025, Tue",
+      "26 Aug 2025, Tue",
+      "02 Sep 2025, Tue"
+    ],
     "SP": [
       "04 Aug 2025, Mon",
       "06 Aug 2025, Wed",
@@ -69,39 +105,8 @@
       "22 Aug 2025, Fri",
       "29 Aug 2025, Fri",
       "01 Sep 2025, Mon",
-      "03 Sep 2025, Wed"
-    ],
-    "FLAT": [
-      "04 Aug 2025, Mon",
-      "07 Aug 2025, Thu",
-      "08 Aug 2025, Fri",
-      "11 Aug 2025, Mon",
-      "12 Aug 2025, Tue",
-      "18 Aug 2025, Mon",
-      "19 Aug 2025, Tue",
-      "22 Aug 2025, Fri",
-      "26 Aug 2025, Tue",
-      "29 Aug 2025, Fri",
-      "01 Sep 2025, Mon",
-      "02 Sep 2025, Tue"
-    ],
-    "SELAB": [
-      "12 Aug 2025, Tue",
-      "19 Aug 2025, Tue",
-      "26 Aug 2025, Tue",
-      "02 Sep 2025, Tue"
-    ],
-    "DCCNLAB": [
-      "06 Aug 2025, Wed",
-      "13 Aug 2025, Wed",
-      "20 Aug 2025, Wed",
-      "27 Aug 2025, Wed",
-      "03 Sep 2025, Wed"
-    ],
-    "DMWLAB": [
-      "14 Aug 2025, Thu",
-      "21 Aug 2025, Thu",
-      "28 Aug 2025, Thu"
+      "03 Sep 2025, Wed",
+      "08 Sep 2025, Mon"
     ]
   },
   "extras": {}
